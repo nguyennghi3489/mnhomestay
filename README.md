@@ -1,33 +1,40 @@
 # LocalStay RAG Multi-Agent System
 
-A sophisticated multi-agent RAG (Retrieve-Augment-Generate) workflow system for automating LocalStay MVP development using specialized AI agents.
+A sophisticated multi-agent RAG (Retrieve-Augment-Generate) workflow system for automating LocalStay MVP development using specialized VS Code AI agents.
 
 ## Architecture
 
-The system uses **specialized agents** coordinated by a central orchestrator:
+The system uses **specialized VS Code agents** coordinated by a central orchestrator:
 
 ```
-🎯 RAG Coordinator
-├── 🔍 Retrieve Agent   - Context retrieval specialist
-├── ⚡ Generate Agent   - Code generation specialist
-├── ✅ Validate Agent   - Quality assurance specialist
-└── 🧪 Test Agent       - Testing specialist
+🎯 @orchestrator          - Main workflow entry point
+├── 🔄 @coordinator       - Multi-agent workflow coordination
+├── 📋 @queue            - Issue queue management
+├── 👁️  @observer         - Performance monitoring
+├── 📊 @dashboard        - Reporting and visualization
+├── 🚀 @deployment       - Docker and deployment
+├── 🔍 @retrieve         - Context retrieval specialist
+├── ⚡ @generate         - Code generation specialist
+├── ✅ @validate         - Quality assurance specialist
+└── 🧪 @test            - Testing specialist
 ```
 
 ## Quick Start
 
-```bash
-# Run complete multi-agent workflow
-node rag-workflow.js start
+Use VS Code agents directly in the chat:
 
-# Test single issue
-node rag-workflow.js test-issue ISSUE-001
+```
+# Run complete multi-agent workflow
+@orchestrator start
+
+# Process specific issue
+@orchestrator process-issue ISSUE-001
 
 # Generate dashboard
-node rag-workflow.js dashboard
+@dashboard generate
 
-# Check system status
-node rag-workflow.js status
+# Check system status  
+@observer status
 ```
 
 ## Project Structure
@@ -35,37 +42,43 @@ node rag-workflow.js status
 ```
 .github/
 ├── copilot-instructions.md     # LocalStay project context
-└── agents/                     # Specialized agent configurations
-    ├── retrieve.agent.md       # Context retrieval agent
-    ├── generate.agent.md       # Code generation agent
-    ├── validate.agent.md       # Quality validation agent
-    └── test.agent.md          # Testing agent
+└── agents/                     # Complete VS Code agent ecosystem
+    ├── orchestrator.agent.md   # Main workflow orchestrator
+    ├── coordinator.agent.md    # Multi-agent coordination
+    ├── queue.agent.md         # Issue management
+    ├── observer.agent.md      # Performance monitoring
+    ├── dashboard.agent.md     # Reporting specialist
+    ├── deployment.agent.md    # Deployment specialist
+    ├── retrieve.agent.md      # Context retrieval
+    ├── generate.agent.md      # Code generation
+    ├── validate.agent.md      # Quality validation
+    └── test.agent.md         # Testing specialist
 
-workflow/
-├── coordinator.ts             # Multi-agent orchestrator
-├── observer.ts               # Enhanced monitoring & metrics
-├── issue-queue.ts           # Issue management
-└── dashboard-generator.ts   # Real-time dashboard
+localstay-generated/             # Generated deployment-ready code
+├── backend/                    # NestJS API with Docker
+├── frontend/                   # Vue 3 UI with Nginx
+└── deploy/                     # Docker orchestration
 
-localstay-mvp-issues.md      # 43 issues across 12 epics
-rag-workflow.js             # Main entry point
-monitoring/                 # Dashboard output
+localstay-mvp-issues.md         # 43 issues across 12 epics
 ```
 
 ## Multi-Agent Workflow
 
-1. **🔍 Retrieve Phase**: Agent searches for relevant code patterns and context
-2. **⚡ Generate Phase**: Agent creates NestJS/Vue/Prisma code based on context
-3. **✅ Validate Phase**: Agent runs quality gates (lint, typecheck, build)
-4. **🧪 Test Phase**: Agent executes comprehensive testing
+1. **📋 @queue Phase**: Process issues from backlog with priority sorting
+2. **🔍 @retrieve Phase**: Search for relevant code patterns and context  
+3. **⚡ @generate Phase**: Create NestJS/Vue/Prisma code based on context
+4. **✅ @validate Phase**: Run quality gates (lint, typecheck, build)
+5. **🧪 @test Phase**: Execute comprehensive testing
+6. **🚀 @deployment Phase**: Generate Docker configs and deployment packages
+7. **👁️ @observer Phase**: Monitor performance and track metrics
 
 Each phase has:
 
-- ✅ Specialized agent with focused expertise
-- 🔄 Automatic handoffs with data validation
-- 📊 Complete observability and metrics
+- ✅ Specialized VS Code agent with focused expertise
+- 🔄 Automatic handoffs coordinated by @coordinator
+- 📊 Complete observability through @observer
 - 🔁 Retry logic with progressive delays
-- 💰 Token usage and cost tracking
+- 💰 Token usage and cost tracking via @dashboard
 
 ## LocalStay Business Context
 
@@ -84,27 +97,25 @@ Each phase has:
 
 ## Monitoring
 
-Real-time dashboard available at `monitoring/dashboard.html` showing:
+Real-time monitoring through VS Code agents:
 
-- Agent performance metrics
-- Token usage and costs
-- Issue processing progress
-- Quality gate results
-- System alerts and warnings
+- **@observer**: Performance metrics and system health
+- **@dashboard**: Token usage, costs, and progress visualization
+- Issue processing progress with quality gate results
+- System alerts and error tracking through agent logs
+- Complete workflow orchestration visibility via @coordinator
 
 ## Development
 
-The system is designed for **orchestration**, not implementation. Each agent:
+The system is designed for **pure agent orchestration** through VS Code. Each agent:
 
-- Has a single, focused responsibility
-- Integrates with VS Code agents or external AI services
-- Provides structured handoffs to the next agent
-- Maintains full observability through the enhanced observer
+- Has a single, focused responsibility within LocalStay context
+- Integrates seamlessly with VS Code agent framework
+- Provides structured handoffs coordinated by @coordinator
+- Maintains full observability through @observer
+- Generates deployment-ready code in localstay-generated/
 
-This approach enables easy extension, better reliability, and clear separation of concerns compared to monolithic processors.
-D --> E[Validate Quality]
-E --> F[Run Tests]
-F --> G[Deploy/Next Issue]
+This approach enables easy extension, better reliability, and clear separation of concerns using VS Code's native agent capabilities.
 
     H[Observer] --> I[Track Tokens]
     H --> J[Monitor Performance]
