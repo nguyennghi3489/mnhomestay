@@ -1,0 +1,54 @@
+@import '../../../design/colors_and_type.css';
+
+:root {
+  color: var(--fg-1);
+  background: var(--bg-app);
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+  margin: 0;
+  background: var(--bg-app);
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--fg-1);
+}
+
+::selection {
+  background: rgba(92, 122, 82, 0.18);
+  color: var(--fg-1);
+}
+
+.hearth-app,
+.hearth-app .v-application,
+.hearth-app .v-application__wrap {
+  background:
+    radial-gradient(circle at top left, rgba(201, 123, 91, 0.14), transparent 28%),
+    radial-gradient(circle at top right, rgba(92, 122, 82, 0.12), transparent 24%),
+    linear-gradient(180deg, var(--linen) 0%, var(--bg-app) 18%, var(--bg-app) 100%);
+  color: var(--fg-1);
+}
+
+.hearth-surface {
+  background: var(--bg-surface);
+  border: 1px solid var(--line-1);
+  box-shadow: var(--shadow-2);
+}
+
+.hearth-page {
+  padding: var(--space-6);
+}
+
+.hearth-title {
+  font-family: var(--font-display);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+}
+
+.hearth-muted {
+  color: var(--fg-2);
+}

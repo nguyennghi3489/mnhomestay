@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Form fields</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html,body{margin:0;background:var(--bg-app);font-family:var(--font-body);}
+  .wrap{padding:20px 24px;display:grid;grid-template-columns:1fr 1fr;gap:16px 22px;}
+  label{font-size:12px;color:var(--fg-2);font-weight:500;display:block;margin-bottom:6px;}
+  .field{display:flex;flex-direction:column;}
+  input, select{font:inherit;font-size:14px;padding:10px 12px;border-radius:10px;border:1px solid var(--line-2);background:var(--paper);color:var(--bark);transition:border-color 180ms;}
+  input:focus, select:focus{outline:none;border-color:var(--moss);box-shadow:0 0 0 3px rgba(92,122,82,.18);}
+  .focused{border-color:var(--moss);box-shadow:0 0 0 3px rgba(92,122,82,.18);}
+  .err{border-color:var(--ember);box-shadow:0 0 0 3px rgba(184,74,46,.15);}
+  .errmsg{font-size:12px;color:var(--ember);margin-top:6px;}
+  .help{font-size:12px;color:var(--fg-3);margin-top:6px;}
+</style>
+</head>
+<body class="hearth">
+<div class="wrap">
+  <div class="field">
+    <label>Guest name</label>
+    <input class="focused" value="Aanya Iyer" />
+    <div class="help">As shown on ID at check-in.</div>
+  </div>
+  <div class="field">
+    <label>Room</label>
+    <select><option>The Garden Suite</option></select>
+  </div>
+  <div class="field">
+    <label>Check-in</label>
+    <input value="Tue, Apr 29" />
+  </div>
+  <div class="field">
+    <label>Phone</label>
+    <input class="err" value="+91 98xxx" />
+    <div class="errmsg">That number's missing a few digits.</div>
+  </div>
+</div>
+</body>
+</html>

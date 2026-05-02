@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Body type</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html,body{margin:0;background:var(--bg-app);font-family:var(--font-body);}
+  .wrap{padding:24px 28px;display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+  .col h4{margin:0 0 6px;font-family:var(--font-body);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--moss);font-weight:600;}
+  .stack{display:flex;flex-direction:column;gap:8px;}
+  .stack .row{display:flex;gap:12px;align-items:baseline;}
+  .tag{font-family:var(--font-mono);font-size:10px;color:var(--fg-3);min-width:56px;}
+</style>
+</head>
+<body class="hearth">
+<div class="wrap">
+  <div class="col">
+    <h4>Body — Inter</h4>
+    <div class="stack">
+      <div class="row"><span class="tag">lg/18</span><span style="font-size:18px;line-height:28px;">A quiet morning at the inn.</span></div>
+      <div class="row"><span class="tag">base/16</span><span style="font-size:16px;line-height:24px;">Welcome back. Three guests today.</span></div>
+      <div class="row"><span class="tag">sm/14</span><span style="font-size:14px;line-height:20px;color:var(--fg-2)">Last sync · two minutes ago</span></div>
+      <div class="row"><span class="tag">xs/12</span><span style="font-size:12px;line-height:16px;color:var(--fg-3)">Updated by Priya · 9:42 AM</span></div>
+    </div>
+  </div>
+  <div class="col">
+    <h4>Mono — JetBrains</h4>
+    <div class="stack">
+      <div class="row"><span class="tag">code</span><span style="font-family:var(--font-mono);font-size:14px;background:var(--bg-sunken);padding:2px 8px;border-radius:6px;">HRT-2401-0428</span></div>
+      <div class="row"><span class="tag">tabular</span><span style="font-family:var(--font-mono);font-size:14px;font-variant-numeric:tabular-nums;">₹4,200 · 3 nights</span></div>
+      <div class="row"><span class="tag">eyebrow</span><span style="font-family:var(--font-body);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--moss);font-weight:600;">Today · Tue Apr 29</span></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

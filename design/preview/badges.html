@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Badges & status</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html,body{margin:0;background:var(--bg-app);font-family:var(--font-body);}
+  .wrap{padding:24px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+  .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;font-size:12.5px;font-weight:600;}
+  .dot{width:7px;height:7px;border-radius:999px;}
+  .confirmed{background:#E5EBDF;color:#2F4A3A;}
+  .pending{background:#F8E9C9;color:#7A5A14;}
+  .arriving{background:#F2D9CB;color:#7A3A22;}
+  .checked{background:#D9E0D2;color:#3A5946;}
+  .cancelled{background:#F5D7CC;color:#7A2818;}
+  .draft{background:#EAE3D2;color:#6B5A4E;}
+  .tag{font-family:var(--font-mono);font-size:11px;padding:3px 8px;border-radius:6px;background:var(--bg-sunken);color:var(--fg-1);}
+</style>
+</head>
+<body class="hearth">
+<div class="wrap">
+  <span class="pill confirmed"><span class="dot" style="background:#5C7A52"></span>Confirmed</span>
+  <span class="pill pending"><span class="dot" style="background:#D9A441"></span>Pending</span>
+  <span class="pill arriving"><span class="dot" style="background:#C97B5B"></span>Arriving today</span>
+  <span class="pill checked"><span class="dot" style="background:#3A5946"></span>Checked in</span>
+  <span class="pill cancelled"><span class="dot" style="background:#B84A2E"></span>Cancelled</span>
+  <span class="pill draft"><span class="dot" style="background:#7A736B"></span>Draft</span>
+  <span class="tag">HRT-2401-0428</span>
+  <span class="tag">3 nights</span>
+</div>
+</body>
+</html>

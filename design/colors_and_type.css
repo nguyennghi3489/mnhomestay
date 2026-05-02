@@ -1,0 +1,214 @@
+/* ============================================================
+   Hearth Design System — Color & Type tokens
+   Cream, moss, forest, clay, bark. Fraunces + Inter.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ---------- Brand palette ---------- */
+  --forest:   #2F4A3A;
+  --forest-deep: #213527;
+  --moss:     #5C7A52;
+  --sage:     #A8B89A;
+  --sage-soft:#CDD6BF;
+  --clay:     #C97B5B;
+  --clay-soft:#E8C4AE;
+  --bark:     #3A2E26;
+  --bark-soft:#6B5A4E;
+  --stone:    #7A736B;
+  --cream:    #F5EFE3;
+  --linen:    #FAF6EC;
+  --paper:    #FFFEFB;
+  --ember:    #B84A2E;
+  --honey:    #D9A441;
+
+  /* ---------- Semantic foreground ---------- */
+  --fg-1: var(--bark);            /* primary text */
+  --fg-2: var(--stone);           /* secondary text */
+  --fg-3: #9C948A;                /* tertiary, captions */
+  --fg-on-dark: var(--linen);
+  --fg-on-accent: var(--linen);
+
+  /* ---------- Semantic surfaces ---------- */
+  --bg-app:     var(--cream);     /* the "paper" of the product */
+  --bg-surface: var(--linen);     /* cards, panels on app bg */
+  --bg-raised:  var(--paper);     /* dropdowns, popovers */
+  --bg-sunken:  #EFE8D9;          /* wells, code blocks */
+  --bg-overlay: rgba(58,46,38,0.32);
+
+  /* ---------- Semantic accents ---------- */
+  --accent:        var(--forest);
+  --accent-hover:  #3A5946;
+  --accent-press:  var(--forest-deep);
+  --accent-soft:   var(--sage-soft);
+  --accent-on:     var(--linen);
+
+  --success: var(--moss);
+  --warning: var(--honey);
+  --danger:  var(--ember);
+  --info:    #4F6B7A;
+
+  /* ---------- Lines ---------- */
+  --line-1: rgba(58, 46, 38, 0.10);
+  --line-2: rgba(58, 46, 38, 0.16);
+  --line-strong: rgba(58, 46, 38, 0.28);
+  --focus-ring: var(--moss);
+
+  /* ---------- Type ---------- */
+  --font-display: 'Fraunces', 'Iowan Old Style', 'Cambria', Georgia, serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --text-xs: 0.75rem;     --lh-xs: 1rem;
+  --text-sm: 0.875rem;    --lh-sm: 1.25rem;
+  --text-base: 1rem;      --lh-base: 1.5rem;
+  --text-lg: 1.125rem;    --lh-lg: 1.75rem;
+  --text-xl: 1.375rem;    --lh-xl: 1.875rem;
+  --text-2xl: 1.75rem;    --lh-2xl: 2.25rem;
+  --text-3xl: 2.25rem;    --lh-3xl: 2.75rem;
+  --text-4xl: 3rem;       --lh-4xl: 3.5rem;
+  --text-5xl: 4rem;       --lh-5xl: 4.5rem;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-eyebrow: 0.14em;
+
+  /* ---------- Spacing ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-14: 56px;
+  --space-18: 72px;
+  --space-24: 96px;
+
+  /* ---------- Radii ---------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-pill: 999px;
+
+  /* ---------- Shadows (warm, bark-tinted) ---------- */
+  --shadow-1: 0 1px 2px rgba(58,46,38,0.06);
+  --shadow-2: 0 4px 12px rgba(58,46,38,0.08), 0 1px 2px rgba(58,46,38,0.04);
+  --shadow-3: 0 12px 32px rgba(58,46,38,0.12), 0 2px 6px rgba(58,46,38,0.06);
+  --shadow-4: 0 24px 64px rgba(58,46,38,0.18), 0 4px 12px rgba(58,46,38,0.08);
+  --shadow-inset-top: inset 0 1px 0 rgba(255,255,255,0.6);
+  --shadow-inset-bottom: inset 0 -1px 0 rgba(58,46,38,0.06);
+
+  /* ---------- Motion ---------- */
+  --ease-settle: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-emph:   cubic-bezier(0.6, 0, 0.2, 1);
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-1: 120ms;
+  --dur-2: 180ms;
+  --dur-3: 240ms;
+  --dur-4: 320ms;
+  --dur-5: 480ms;
+}
+
+/* ============================================================
+   Semantic element styles — opt-in via .hearth scope so we
+   don't trample host pages.
+   ============================================================ */
+.hearth {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--lh-base);
+  color: var(--fg-1);
+  background: var(--bg-app);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.hearth h1, .hearth .h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--text-4xl);
+  line-height: var(--lh-4xl);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+  font-variation-settings: "opsz" 96;
+}
+.hearth h2, .hearth .h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--text-3xl);
+  line-height: var(--lh-3xl);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+  font-variation-settings: "opsz" 48;
+}
+.hearth h3, .hearth .h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--text-2xl);
+  line-height: var(--lh-2xl);
+  color: var(--fg-1);
+  font-variation-settings: "opsz" 32;
+}
+.hearth h4, .hearth .h4 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-lg);
+  line-height: var(--lh-lg);
+  color: var(--fg-1);
+}
+.hearth p, .hearth .body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--lh-base);
+  color: var(--fg-1);
+  text-wrap: pretty;
+}
+.hearth .lead {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  line-height: var(--lh-lg);
+  color: var(--fg-2);
+}
+.hearth small, .hearth .caption {
+  font-size: var(--text-sm);
+  line-height: var(--lh-sm);
+  color: var(--fg-2);
+}
+.hearth .eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--moss);
+  font-weight: 600;
+}
+.hearth code, .hearth .mono {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--bg-sunken);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  color: var(--fg-1);
+}
+.hearth a {
+  color: var(--moss);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(92,122,82,0.4);
+  transition: color var(--dur-2) var(--ease-settle);
+}
+.hearth a:hover { color: var(--forest); text-decoration-color: var(--forest); }
+
+.hearth :focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}

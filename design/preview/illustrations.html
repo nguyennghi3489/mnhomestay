@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Brand illustration</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html,body{margin:0;background:var(--bg-app);font-family:var(--font-body);}
+  .wrap{padding:22px 26px;display:flex;align-items:center;gap:24px;}
+  .frame{width:200px;height:160px;background:var(--linen);border-radius:14px;border:1px solid var(--line-1);position:relative;overflow:hidden;}
+  .frame img{position:absolute;}
+  .copy{flex:1;}
+  .copy h3{font-family:var(--font-display);margin:0 0 6px;font-size:22px;font-weight:500;color:var(--bark);}
+  .copy p{margin:0;font-size:13.5px;color:var(--fg-2);line-height:1.5;}
+</style>
+</head>
+<body class="hearth">
+<div class="wrap">
+  <div class="frame">
+    <img src="../assets/sprig.svg" style="opacity:.3;right:-10px;bottom:-20px;height:170px;" alt=""/>
+  </div>
+  <div class="frame" style="background:var(--forest);">
+    <img src="../assets/vine.svg" style="opacity:.6;left:0;bottom:0;width:100%;filter:invert(1) hue-rotate(180deg) brightness(1.4);" alt=""/>
+  </div>
+  <div class="copy">
+    <h3>Botanical flourishes</h3>
+    <p>Sprig at 30% opacity in empty states. Vine across hero corners and footers. Hand-drawn, never tiled.</p>
+  </div>
+</div>
+</body>
+</html>

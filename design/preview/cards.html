@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Cards</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html,body{margin:0;background:var(--bg-app);font-family:var(--font-body);}
+  .wrap{padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .card{background:var(--bg-surface);border-radius:16px;box-shadow:var(--shadow-2);padding:18px;display:flex;flex-direction:column;gap:10px;}
+  .row{display:flex;align-items:center;gap:12px;}
+  .avatar{width:42px;height:42px;border-radius:999px;background:linear-gradient(135deg,#A8B89A,#5C7A52);color:var(--linen);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:600;font-size:17px;}
+  .name{font-weight:600;color:var(--fg-1);font-size:14.5px;}
+  .meta{font-size:12.5px;color:var(--fg-2);}
+  .pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;background:#E5EBDF;color:#2F4A3A;align-self:flex-start;}
+  .pill .dot{width:6px;height:6px;border-radius:999px;background:#5C7A52;}
+  .stat{display:flex;justify-content:space-between;font-size:13px;color:var(--fg-2);border-top:1px solid var(--line-1);padding-top:10px;}
+  .stat b{color:var(--fg-1);font-weight:600;}
+  .stat .num{font-family:var(--font-mono);font-variant-numeric:tabular-nums;}
+</style>
+</head>
+<body class="hearth">
+<div class="wrap">
+  <div class="card">
+    <div class="row">
+      <div class="avatar">AI</div>
+      <div>
+        <div class="name">Aanya Iyer</div>
+        <div class="meta">The Garden Suite · 3 nights</div>
+      </div>
+    </div>
+    <span class="pill"><span class="dot"></span>Confirmed</span>
+    <div class="stat"><span>Total</span><b class="num">₹12,600</b></div>
+  </div>
+  <div class="card">
+    <div class="row">
+      <div class="avatar" style="background:linear-gradient(135deg,#E8C4AE,#C97B5B);">RM</div>
+      <div>
+        <div class="name">Ravi Menon</div>
+        <div class="meta">The Loft · arriving today</div>
+      </div>
+    </div>
+    <span class="pill" style="background:#F2D9CB;color:#7A3A22;"><span class="dot" style="background:#C97B5B"></span>Arriving · 4:00 PM</span>
+    <div class="stat"><span>Stay</span><b class="num">Apr 29 – May 2</b></div>
+  </div>
+</div>
+</body>
+</html>

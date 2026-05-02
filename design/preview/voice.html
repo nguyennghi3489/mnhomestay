@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Voice & tone</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html,body{margin:0;background:var(--bg-app);font-family:var(--font-body);}
+  .wrap{padding:20px 24px;display:grid;grid-template-columns:1fr 1fr;gap:14px 24px;}
+  .col h4{margin:0 0 8px;font-size:11px;text-transform:uppercase;letter-spacing:.14em;font-weight:600;}
+  .dont h4{color:var(--ember);}
+  .do h4{color:var(--moss);}
+  .item{font-size:14px;line-height:1.4;color:var(--fg-1);padding:8px 0;border-top:1px dashed var(--line-1);}
+  .item:first-of-type{border-top:none;}
+  .dont .item{color:var(--bark-soft);text-decoration:line-through;text-decoration-color:rgba(184,74,46,.4);}
+</style>
+</head>
+<body class="hearth">
+<div class="wrap">
+  <div class="col dont">
+    <h4>Don't</h4>
+    <div class="item">Manage Your Property Inventory</div>
+    <div class="item">User successfully created!</div>
+    <div class="item">Welcome back, valued partner!</div>
+    <div class="item">0 results found</div>
+  </div>
+  <div class="col do">
+    <h4>Do</h4>
+    <div class="item">Your rooms</div>
+    <div class="item">Guest added.</div>
+    <div class="item">Welcome back.</div>
+    <div class="item">Nothing here yet.</div>
+  </div>
+</div>
+</body>
+</html>

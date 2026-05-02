@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Neutral scale</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html,body{margin:0;background:var(--bg-app);font-family:var(--font-body);}
+  .row{display:flex;padding:24px;gap:0;}
+  .step{flex:1;height:96px;display:flex;flex-direction:column;justify-content:flex-end;padding:10px 12px;border-radius:0;}
+  .step:first-child{border-radius:12px 0 0 12px;}
+  .step:last-child{border-radius:0 12px 12px 0;}
+  .step .lbl{font-size:11px;font-family:var(--font-mono);}
+  .step .nm{font-size:12px;font-weight:600;}
+  .legend{padding:0 24px 18px;font-size:12px;color:var(--fg-2);display:flex;justify-content:space-between;}
+</style>
+</head>
+<body class="hearth">
+<div class="row">
+  <div class="step" style="background:#FFFEFB;color:#3A2E26;border:1px solid var(--line-1);border-right:none;"><div class="nm">Paper</div><div class="lbl">#FFFEFB</div></div>
+  <div class="step" style="background:#FAF6EC;color:#3A2E26;"><div class="nm">Linen</div><div class="lbl">#FAF6EC</div></div>
+  <div class="step" style="background:#F5EFE3;color:#3A2E26;"><div class="nm">Cream</div><div class="lbl">#F5EFE3</div></div>
+  <div class="step" style="background:#EFE8D9;color:#3A2E26;"><div class="nm">Sunken</div><div class="lbl">#EFE8D9</div></div>
+  <div class="step" style="background:#9C948A;color:#FAF6EC;"><div class="nm">FG-3</div><div class="lbl">#9C948A</div></div>
+  <div class="step" style="background:#7A736B;color:#FAF6EC;"><div class="nm">Stone</div><div class="lbl">#7A736B</div></div>
+  <div class="step" style="background:#6B5A4E;color:#FAF6EC;"><div class="nm">Bark-soft</div><div class="lbl">#6B5A4E</div></div>
+  <div class="step" style="background:#3A2E26;color:#FAF6EC;"><div class="nm">Bark</div><div class="lbl">#3A2E26</div></div>
+</div>
+<div class="legend"><span>Surfaces</span><span>Foreground</span></div>
+</body>
+</html>

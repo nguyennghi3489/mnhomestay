@@ -1,0 +1,122 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Property {
+  id             String    @id @default(uuid())
+  name           String
+  address        String
+  phone          String
+  zaloId         String?
+  checkinTime    String    @default("14:00")
+  checkoutTime   String    @default("12:00")
+  depositPercent Int       @default(30)
+  currency       String    @default("VND")
+  createdAt      DateTime  @default(now())
+  bookings       Booking[]
+  rooms          Room[]
+  users          User[]
+}
+
+model Room {
+  id           String     @id @default(uuid())
+  propertyId   String
+  name         String
+  roomType     String
+  maxOccupancy Int
+  baseRate     Decimal
+  status       RoomStatus @default(AVAILABLE)
+  bookings     Booking[]
+  property     Property   @relation(fields: [propertyId], references: [id])
+}
+
+model Booking {
+  id            String        @id @default(uuid())
+  propertyId    String
+  roomId        String
+  guestName     String
+  guestPhone    String
+  checkinDate   DateTime
+  checkoutDate  DateTime
+  adults        Int           @default(1)
+  children      Int           @default(0)
+  totalAmount   Decimal
+  depositAmount Decimal
+  depositPaid   Boolean       @default(false)
+  status        BookingStatus @default(PENDING)
+  source        BookingSource @default(WALKIN)
+  notes         String?
+  createdAt     DateTime      @default(now())
+  createdBy     String
+  property      Property      @relation(fields: [propertyId], references: [id])
+  room          Room          @relation(fields: [roomId], references: [id])
+  payments      Payment[]
+}
+
+model Payment {
+  id             String        @id @default(uuid())
+  bookingId      String
+  amount         Decimal
+  method         PaymentMethod
+  status         PaymentStatus @default(PENDING)
+  transactionRef String?
+  paidAt         DateTime?
+  booking        Booking       @relation(fields: [bookingId], references: [id])
+}
+
+model User {
+  id           String   @id @default(uuid())
+  propertyId   String
+  name         String
+  phone        String   @unique
+  role         UserRole @default(STAFF)
+  createdAt    DateTime @default(now())
+  passwordHash String
+  property     Property @relation(fields: [propertyId], references: [id])
+}
+
+enum RoomStatus {
+  AVAILABLE
+  OCCUPIED
+  MAINTENANCE
+  OUT_OF_ORDER
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CHECKED_IN
+  CHECKED_OUT
+  CANCELLED
+}
+
+enum BookingSource {
+  WALKIN
+  PHONE
+  ZALO
+  WEBSITE
+  OTA
+}
+
+enum PaymentMethod {
+  VNPAY
+  MOMO
+  CASH
+  TRANSFER
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  REFUNDED
+}
+
+enum UserRole {
+  OWNER
+  STAFF
+}

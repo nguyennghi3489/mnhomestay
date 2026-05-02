@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Semantic colors</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html,body{margin:0;background:var(--bg-app);font-family:var(--font-body);}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:22px;}
+  .item{border-radius:12px;padding:14px;border:1px solid var(--line-1);background:var(--bg-surface);display:flex;flex-direction:column;gap:10px;}
+  .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;font-size:12.5px;font-weight:600;align-self:flex-start;}
+  .dot{width:8px;height:8px;border-radius:999px;}
+  .lbl{font-size:11px;color:var(--fg-2);font-family:var(--font-mono);}
+  .name{font-size:13px;font-weight:600;color:var(--fg-1);}
+</style>
+</head>
+<body class="hearth">
+<div class="grid">
+  <div class="item">
+    <span class="pill" style="background:#E5EBDF;color:#2F4A3A;"><span class="dot" style="background:#5C7A52"></span>Confirmed</span>
+    <div class="name">Success · Moss</div>
+    <div class="lbl">--success #5C7A52</div>
+  </div>
+  <div class="item">
+    <span class="pill" style="background:#F8E9C9;color:#7A5A14;"><span class="dot" style="background:#D9A441"></span>Pending</span>
+    <div class="name">Warning · Honey</div>
+    <div class="lbl">--warning #D9A441</div>
+  </div>
+  <div class="item">
+    <span class="pill" style="background:#F5D7CC;color:#7A2818;"><span class="dot" style="background:#B84A2E"></span>Cancelled</span>
+    <div class="name">Danger · Ember</div>
+    <div class="lbl">--danger #B84A2E</div>
+  </div>
+  <div class="item">
+    <span class="pill" style="background:#F2D9CB;color:#7A3A22;"><span class="dot" style="background:#C97B5B"></span>Arriving today</span>
+    <div class="name">Accent · Clay</div>
+    <div class="lbl">--clay #C97B5B</div>
+  </div>
+</div>
+</body>
+</html>
