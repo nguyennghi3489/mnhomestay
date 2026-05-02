@@ -31,6 +31,7 @@ model Room {
   maxOccupancy Int
   baseRate     Decimal
   status       RoomStatus @default(AVAILABLE)
+  isActive     Boolean    @default(true)
   bookings     Booking[]
   property     Property   @relation(fields: [propertyId], references: [id])
 }
